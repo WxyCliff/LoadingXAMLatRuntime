@@ -8,6 +8,9 @@
              xmlns:local="clr-namespace:RuntimeXaml">
     <ContentPage.Content>
         <StackLayout x:Name="_stackLayout" Margin="20">
+            <ActivityIndicator x:Name="defaultActivityIndicator"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="Fill" />
         </StackLayout>
     </ContentPage.Content>
 </local:BasePage>

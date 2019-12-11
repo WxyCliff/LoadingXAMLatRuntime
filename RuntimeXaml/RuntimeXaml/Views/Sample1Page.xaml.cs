@@ -27,9 +27,13 @@ namespace RuntimeXaml
         }
         async Task LoadXaml()
         {
+            defaultActivityIndicator.IsRunning = true;
             var navigationButtonXAML = await ApiService.GetSample1Button();
             Button navigationButton = new Button().LoadFromXaml(navigationButtonXAML);
             navigationButton.Clicked += OnNavigationButton_Clicked;
+            defaultActivityIndicator.IsRunning = false;
+            defaultActivityIndicator.VerticalOptions = LayoutOptions.Start;
+            defaultActivityIndicator.HeightRequest = 0;
             _stackLayout.Children.Add(navigationButton);
         }
 
