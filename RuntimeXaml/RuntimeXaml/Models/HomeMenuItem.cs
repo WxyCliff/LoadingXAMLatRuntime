@@ -7,7 +7,8 @@ namespace RuntimeXaml.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Sample1,
     }
     public class HomeMenuItem
     {
