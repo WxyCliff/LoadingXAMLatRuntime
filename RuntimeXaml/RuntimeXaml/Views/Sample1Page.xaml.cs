@@ -18,26 +18,27 @@ namespace RuntimeXaml
         public Sample1Page()
         {
             InitializeComponent();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
             LoadXaml();
         }
+
+
         async Task LoadXaml()
         {
-            defaultActivityIndicator.IsRunning = true;
+             this.Loading(true);
+
+            // API REUTRN XAML BUTTON
+            // ADD BUTTON CLICK ALERT EVENT
+            // ADD BUTTON TO LAYOUT
             var navigationButtonXAML = await ApiService.GetSample1Button();
             Button navigationButton = new Button().LoadFromXaml(navigationButtonXAML);
             navigationButton.Clicked += OnNavigationButton_Clicked;
-            defaultActivityIndicator.IsRunning = false;
-            defaultActivityIndicator.VerticalOptions = LayoutOptions.Start;
-            defaultActivityIndicator.HeightRequest = 0;
+
             _stackLayout.Children.Add(navigationButton);
+
+           this.Loading(false);
         }
 
-        private async void OnNavigationButton_Clicked(object sender, EventArgs e)
+        async void OnNavigationButton_Clicked(object sender, EventArgs e)
         {
             await DisplayAlert("Alert", "Alert Display", "OK");
         }

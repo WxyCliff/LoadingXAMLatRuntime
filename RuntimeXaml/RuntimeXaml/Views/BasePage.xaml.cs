@@ -18,5 +18,22 @@ namespace RuntimeXaml
         {
             InitializeComponent();
         }
+
+
+        public void Loading(bool isRunning)
+        {
+            ActivityIndicator activityIndicator = basePage.FindByName<ActivityIndicator>("defaultActivityIndicator");
+
+            if (isRunning)
+            {
+                activityIndicator.IsRunning = true;
+            }
+            else
+            {
+                activityIndicator.IsRunning = false;
+                activityIndicator.VerticalOptions = LayoutOptions.Start;
+                activityIndicator.HeightRequest = 0;
+            }
+        }
     }
 }
