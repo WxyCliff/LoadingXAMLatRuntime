@@ -14,17 +14,16 @@ namespace RuntimeXaml.Services
     {
         HttpClient client;
 
-        string apiElement;
+        List<string> apiElement;
         public ApiService()
         {
             client = new HttpClient();
-            apiElement = string.Empty;
+            apiElement = new List<string>();
         }
 
-
-        public async Task<string> GetSample1Button()
+        public async Task<List<string>> GetXamlItems(string apiName)
         {
-            var uri = new Uri($"{App.ApiBackendUrl}{"GetSample1"}");
+            var uri = new Uri($"{App.ApiBackendUrl}{apiName}");
 
             try
             {
@@ -32,7 +31,34 @@ namespace RuntimeXaml.Services
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    apiElement = JsonConvert.DeserializeObject<Response<string>>(content).Result;
+                    apiElement = JsonConvert.DeserializeObject<Response<List<string>>>(content).Result;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {0}", ex.Message);
+            }
+            return apiElement;
+        }
+
+        public async Task<List<string>> PostItems(PostData postData)
+        {
+            var uri = new Uri($"{App.ApiBackendUrl}PostSample2");
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(postData);
+
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(uri, content);
+
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var respContent = await response.Content.ReadAsStringAsync();
+                    apiElement = JsonConvert.DeserializeObject<Response<List<string>>>(respContent).Result;
                 }
 
             }

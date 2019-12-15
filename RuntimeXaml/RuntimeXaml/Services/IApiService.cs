@@ -8,6 +8,8 @@ namespace RuntimeXaml.Services
 {
     public interface IApiService
     {
-        Task<string> GetSample1Button();
+        Task<List<string>> GetXamlItems(string apiName);
+
+        Task<List<string>> PostItems(PostData postData);
     }
 }

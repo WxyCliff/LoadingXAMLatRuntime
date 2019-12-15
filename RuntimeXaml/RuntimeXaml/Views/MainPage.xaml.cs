@@ -39,6 +39,9 @@ namespace RuntimeXaml.Views
                     case (int)MenuItemType.Sample1:
                         MenuPages.Add(id, new NavigationPage(new Sample1Page()));
                         break;
+                    case (int)MenuItemType.Sample2:
+                        MenuPages.Add(id, new NavigationPage(new Sample2Page()));
+                        break;
                 }
             }
 

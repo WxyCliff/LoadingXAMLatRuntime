@@ -24,18 +24,19 @@ namespace RuntimeXaml
 
         async Task LoadXaml()
         {
-             this.Loading(true);
+            this.Loading(true);
 
             // API REUTRN XAML BUTTON
             // ADD BUTTON CLICK ALERT EVENT
             // ADD BUTTON TO LAYOUT
-            var navigationButtonXAML = await ApiService.GetSample1Button();
-            Button navigationButton = new Button().LoadFromXaml(navigationButtonXAML);
+            var navigationButtonXAML = await ApiService.GetXamlItems("GetSample1");
+
+            Button navigationButton = new Button().LoadFromXaml(navigationButtonXAML.FirstOrDefault());
             navigationButton.Clicked += OnNavigationButton_Clicked;
 
             _stackLayout.Children.Add(navigationButton);
 
-           this.Loading(false);
+            this.Loading(false);
         }
 
         async void OnNavigationButton_Clicked(object sender, EventArgs e)
