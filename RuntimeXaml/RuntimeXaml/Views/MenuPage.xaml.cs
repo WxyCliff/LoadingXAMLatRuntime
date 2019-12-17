@@ -23,7 +23,8 @@ namespace RuntimeXaml.Views
                // new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.Sample1, Title="Sample1" },
-                new HomeMenuItem {Id = MenuItemType.Sample2, Title="Sample2" }
+                new HomeMenuItem {Id = MenuItemType.Sample2, Title="Sample2" },
+                new HomeMenuItem {Id = MenuItemType.Sample3, Title="Sample3" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

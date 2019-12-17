@@ -30,9 +30,6 @@ namespace RuntimeXaml.Views
             {
                 switch (id)
                 {
-                    //case (int)MenuItemType.Browse:
-                    //    MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                    //    break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
@@ -41,6 +38,9 @@ namespace RuntimeXaml.Views
                         break;
                     case (int)MenuItemType.Sample2:
                         MenuPages.Add(id, new NavigationPage(new Sample2Page()));
+                        break;
+                    case (int)MenuItemType.Sample3:
+                        MenuPages.Add(id, new NavigationPage(new Sample3Page()));
                         break;
                 }
             }

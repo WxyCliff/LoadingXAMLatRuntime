@@ -9,7 +9,8 @@ namespace RuntimeXaml.Models
         Browse,
         About,
         Sample1,
-        Sample2
+        Sample2,
+        Sample3
     }
     public class HomeMenuItem
     {

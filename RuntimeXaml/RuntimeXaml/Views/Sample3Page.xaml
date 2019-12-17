@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RuntimeXaml.Sample3Page"
+             xmlns:local="clr-namespace:RuntimeXaml">
+    <ContentPage.Content>
+        <StackLayout x:Name="_stackLayout" Margin="20">
+            <ActivityIndicator x:Name="defaultActivityIndicator"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="Fill" />
+        </StackLayout>
+    </ContentPage.Content>
+</local:BasePage>
