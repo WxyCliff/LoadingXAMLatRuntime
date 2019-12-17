@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="RuntimeXaml.Sample2Page"
+             x:Class="RuntimeXaml.Views.Sample2Page"
              xmlns:local="clr-namespace:RuntimeXaml">
     <ContentPage.Content>
         <StackLayout x:Name="_stackLayout" Margin="20">

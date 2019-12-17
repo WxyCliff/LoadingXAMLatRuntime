@@ -10,7 +10,7 @@ namespace RuntimeXaml.ViewModels
         public AboutViewModel()
         {
             Title = "About";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://xamarin.com"));
+            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://docs.microsoft.com/zh-tw/xamarin/xamarin-forms/xaml/runtime-load"));
         }
 
         public ICommand OpenWebCommand { get; }

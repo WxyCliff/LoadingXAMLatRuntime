@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace RuntimeXaml
+namespace RuntimeXaml.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Sample1Page : BasePage
